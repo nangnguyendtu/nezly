@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB0038F6234EE3FA00A8CF72 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0038F5234EE3FA00A8CF72 /* UICollectionView.swift */; };
+		CBE8C027234C2EE800A9D5CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE8C026234C2EE800A9D5CB /* AppDelegate.swift */; };
+		CBE8C029234C2EE800A9D5CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE8C028234C2EE800A9D5CB /* ViewController.swift */; };
+		CBE8C02C234C2EE800A9D5CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE8C02A234C2EE800A9D5CB /* Main.storyboard */; };
+		CBE8C02F234C2EE800A9D5CB /* Nezly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBE8C02D234C2EE800A9D5CB /* Nezly.xcdatamodeld */; };
+		CBE8C031234C2EEB00A9D5CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE8C030234C2EEB00A9D5CB /* Assets.xcassets */; };
+		CBE8C034234C2EEB00A9D5CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE8C032234C2EEB00A9D5CB /* LaunchScreen.storyboard */; };
+		CBE8C03C234C2FBA00A9D5CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE8C03B234C2FBA00A9D5CB /* HomeViewController.swift */; };
+		CBE8C045234C3E1F00A9D5CB /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE8C043234C3E1F00A9D5CB /* CollectionViewCell.swift */; };
+		CBE8C046234C3E1F00A9D5CB /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBE8C044234C3E1F00A9D5CB /* CollectionViewCell.xib */; };
+		CBE8C049234C66E700A9D5CB /* AuctionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE8C047234C66E700A9D5CB /* AuctionCollectionViewCell.swift */; };
+		CBE8C04A234C66E700A9D5CB /* AuctionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBE8C048234C66E700A9D5CB /* AuctionCollectionViewCell.xib */; };
+		CBF0823C234C913500DCB0B8 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0823A234C913500DCB0B8 /* ListCollectionViewCell.swift */; };
+		CBF0823D234C913500DCB0B8 /* ListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF0823B234C913500DCB0B8 /* ListCollectionViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CB0038F5234EE3FA00A8CF72 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		CBE8C023234C2EE800A9D5CB /* Nezly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nezly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBE8C026234C2EE800A9D5CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CBE8C028234C2EE800A9D5CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CBE8C02B234C2EE800A9D5CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CBE8C02E234C2EE800A9D5CB /* Nezly.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nezly.xcdatamodel; sourceTree = "<group>"; };
+		CBE8C030234C2EEB00A9D5CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CBE8C033234C2EEB00A9D5CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CBE8C035234C2EEB00A9D5CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBE8C03B234C2FBA00A9D5CB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CBE8C043234C3E1F00A9D5CB /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		CBE8C044234C3E1F00A9D5CB /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		CBE8C047234C66E700A9D5CB /* AuctionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionCollectionViewCell.swift; sourceTree = "<group>"; };
+		CBE8C048234C66E700A9D5CB /* AuctionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuctionCollectionViewCell.xib; sourceTree = "<group>"; };
+		CBF0823A234C913500DCB0B8 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
+		CBF0823B234C913500DCB0B8 /* ListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCollectionViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CBE8C020234C2EE800A9D5CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB0038F4234EE3D600A8CF72 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CB0038F5234EE3FA00A8CF72 /* UICollectionView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CBE8C01A234C2EE800A9D5CB = {
+			isa = PBXGroup;
+			children = (
+				CBE8C025234C2EE800A9D5CB /* Nezly */,
+				CBE8C024234C2EE800A9D5CB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CBE8C024234C2EE800A9D5CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CBE8C023234C2EE800A9D5CB /* Nezly.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CBE8C025234C2EE800A9D5CB /* Nezly */ = {
+			isa = PBXGroup;
+			children = (
+				CB0038F4234EE3D600A8CF72 /* Extension */,
+				CBE8C026234C2EE800A9D5CB /* AppDelegate.swift */,
+				CBE8C03F234C3D6900A9D5CB /* Model */,
+				CBE8C03D234C3D5300A9D5CB /* View */,
+				CBE8C03E234C3D5D00A9D5CB /* Controllers */,
+				CBE8C040234C3D9A00A9D5CB /* Resources */,
+				CBE8C041234C3DE300A9D5CB /* Supporting Files */,
+			);
+			path = Nezly;
+			sourceTree = "<group>";
+		};
+		CBE8C03D234C3D5300A9D5CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CBE8C042234C3DFB00A9D5CB /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CBE8C03E234C3D5D00A9D5CB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CBE8C028234C2EE800A9D5CB /* ViewController.swift */,
+				CBE8C03B234C2FBA00A9D5CB /* HomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CBE8C03F234C3D6900A9D5CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CBE8C040234C3D9A00A9D5CB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CBE8C030234C2EEB00A9D5CB /* Assets.xcassets */,
+				CBE8C02A234C2EE800A9D5CB /* Main.storyboard */,
+				CBE8C032234C2EEB00A9D5CB /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CBE8C041234C3DE300A9D5CB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CBE8C035234C2EEB00A9D5CB /* Info.plist */,
+				CBE8C02D234C2EE800A9D5CB /* Nezly.xcdatamodeld */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CBE8C042234C3DFB00A9D5CB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CBE8C043234C3E1F00A9D5CB /* CollectionViewCell.swift */,
+				CBE8C044234C3E1F00A9D5CB /* CollectionViewCell.xib */,
+				CBE8C047234C66E700A9D5CB /* AuctionCollectionViewCell.swift */,
+				CBE8C048234C66E700A9D5CB /* AuctionCollectionViewCell.xib */,
+				CBF0823A234C913500DCB0B8 /* ListCollectionViewCell.swift */,
+				CBF0823B234C913500DCB0B8 /* ListCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CBE8C022234C2EE800A9D5CB /* Nezly */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBE8C038234C2EEB00A9D5CB /* Build configuration list for PBXNativeTarget "Nezly" */;
+			buildPhases = (
+				CBE8C01F234C2EE800A9D5CB /* Sources */,
+				CBE8C020234C2EE800A9D5CB /* Frameworks */,
+				CBE8C021234C2EE800A9D5CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nezly;
+			productName = Nezly;
+			productReference = CBE8C023234C2EE800A9D5CB /* Nezly.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CBE8C01B234C2EE800A9D5CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = Nguyen;
+				TargetAttributes = {
+					CBE8C022234C2EE800A9D5CB = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = CBE8C01E234C2EE800A9D5CB /* Build configuration list for PBXProject "Nezly" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CBE8C01A234C2EE800A9D5CB;
+			productRefGroup = CBE8C024234C2EE800A9D5CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CBE8C022234C2EE800A9D5CB /* Nezly */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CBE8C021234C2EE800A9D5CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBE8C034234C2EEB00A9D5CB /* LaunchScreen.storyboard in Resources */,
+				CBE8C031234C2EEB00A9D5CB /* Assets.xcassets in Resources */,
+				CBF0823D234C913500DCB0B8 /* ListCollectionViewCell.xib in Resources */,
+				CBE8C04A234C66E700A9D5CB /* AuctionCollectionViewCell.xib in Resources */,
+				CBE8C046234C3E1F00A9D5CB /* CollectionViewCell.xib in Resources */,
+				CBE8C02C234C2EE800A9D5CB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CBE8C01F234C2EE800A9D5CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBE8C045234C3E1F00A9D5CB /* CollectionViewCell.swift in Sources */,
+				CBF0823C234C913500DCB0B8 /* ListCollectionViewCell.swift in Sources */,
+				CBE8C029234C2EE800A9D5CB /* ViewController.swift in Sources */,
+				CBE8C02F234C2EE800A9D5CB /* Nezly.xcdatamodeld in Sources */,
+				CBE8C027234C2EE800A9D5CB /* AppDelegate.swift in Sources */,
+				CBE8C049234C66E700A9D5CB /* AuctionCollectionViewCell.swift in Sources */,
+				CB0038F6234EE3FA00A8CF72 /* UICollectionView.swift in Sources */,
+				CBE8C03C234C2FBA00A9D5CB /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CBE8C02A234C2EE800A9D5CB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBE8C02B234C2EE800A9D5CB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CBE8C032234C2EEB00A9D5CB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBE8C033234C2EEB00A9D5CB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CBE8C036234C2EEB00A9D5CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CBE8C037234C2EEB00A9D5CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CBE8C039234C2EEB00A9D5CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DL3C7PR5V2;
+				INFOPLIST_FILE = "$(SRCROOT)/Nezly/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.Neazly;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CBE8C03A234C2EEB00A9D5CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DL3C7PR5V2;
+				INFOPLIST_FILE = "$(SRCROOT)/Nezly/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.Neazly;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CBE8C01E234C2EE800A9D5CB /* Build configuration list for PBXProject "Nezly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBE8C036234C2EEB00A9D5CB /* Debug */,
+				CBE8C037234C2EEB00A9D5CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBE8C038234C2EEB00A9D5CB /* Build configuration list for PBXNativeTarget "Nezly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBE8C039234C2EEB00A9D5CB /* Debug */,
+				CBE8C03A234C2EEB00A9D5CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CBE8C02D234C2EE800A9D5CB /* Nezly.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CBE8C02E234C2EE800A9D5CB /* Nezly.xcdatamodel */,
+			);
+			currentVersion = CBE8C02E234C2EE800A9D5CB /* Nezly.xcdatamodel */;
+			path = Nezly.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CBE8C01B234C2EE800A9D5CB /* Project object */;
+}
