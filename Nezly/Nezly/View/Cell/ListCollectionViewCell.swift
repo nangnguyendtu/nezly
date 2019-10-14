@@ -15,7 +15,7 @@ class ListCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         containerView.layer.cornerRadius = 12
-     
+        nameLabel.font = UIFont(name:"Avenir-Book",size:14)
     }
 
 }

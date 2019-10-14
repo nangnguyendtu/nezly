@@ -16,6 +16,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView3: UICollectionView!
     @IBOutlet weak var collectionView4: UICollectionView!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var nameTextField: UITextField!
+ 
+    
     
     // MARK: - Variable
     var Arrays1 = ["CANNABIS","CULTIVATION","SERVICES"]
@@ -32,6 +35,7 @@ class HomeViewController: UIViewController {
     collectionView4.getCellFromNib(identifier: "ListCollectionViewCell")
         
     containerView.layer.cornerRadius = 5
+    nameTextField.font = UIFont.systemFont(ofSize: 15, weight: .regular)
      
     // MARK:
     let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 91, height: 36))
