@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CB0038F6234EE3FA00A8CF72 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0038F5234EE3FA00A8CF72 /* UICollectionView.swift */; };
+		CB327210235567E000617A2E /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = CB32720F235567E000617A2E /* categories.json */; };
+		CB3272122355698E00617A2E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3272112355698E00617A2E /* Category.swift */; };
+		CB32721423556B1C00617A2E /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32721323556B1C00617A2E /* Categories.swift */; };
 		CBE8C027234C2EE800A9D5CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE8C026234C2EE800A9D5CB /* AppDelegate.swift */; };
 		CBE8C029234C2EE800A9D5CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE8C028234C2EE800A9D5CB /* ViewController.swift */; };
 		CBE8C02C234C2EE800A9D5CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE8C02A234C2EE800A9D5CB /* Main.storyboard */; };
@@ -25,6 +28,9 @@
 
 /* Begin PBXFileReference section */
 		CB0038F5234EE3FA00A8CF72 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		CB32720F235567E000617A2E /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
+		CB3272112355698E00617A2E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		CB32721323556B1C00617A2E /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		CBE8C023234C2EE800A9D5CB /* Nezly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nezly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE8C026234C2EE800A9D5CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBE8C028234C2EE800A9D5CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,8 +86,8 @@
 		CBE8C025234C2EE800A9D5CB /* Nezly */ = {
 			isa = PBXGroup;
 			children = (
-				CB0038F4234EE3D600A8CF72 /* Extension */,
 				CBE8C026234C2EE800A9D5CB /* AppDelegate.swift */,
+				CB0038F4234EE3D600A8CF72 /* Extension */,
 				CBE8C03F234C3D6900A9D5CB /* Model */,
 				CBE8C03D234C3D5300A9D5CB /* View */,
 				CBE8C03E234C3D5D00A9D5CB /* Controllers */,
@@ -111,6 +117,8 @@
 		CBE8C03F234C3D6900A9D5CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CB3272112355698E00617A2E /* Category.swift */,
+				CB32721323556B1C00617A2E /* Categories.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -118,6 +126,7 @@
 		CBE8C040234C3D9A00A9D5CB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CB32720F235567E000617A2E /* categories.json */,
 				CBE8C030234C2EEB00A9D5CB /* Assets.xcassets */,
 				CBE8C02A234C2EE800A9D5CB /* Main.storyboard */,
 				CBE8C032234C2EEB00A9D5CB /* LaunchScreen.storyboard */,
@@ -205,6 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB327210235567E000617A2E /* categories.json in Resources */,
 				CBE8C034234C2EEB00A9D5CB /* LaunchScreen.storyboard in Resources */,
 				CBE8C031234C2EEB00A9D5CB /* Assets.xcassets in Resources */,
 				CBF0823D234C913500DCB0B8 /* ListCollectionViewCell.xib in Resources */,
@@ -226,7 +236,9 @@
 				CBE8C029234C2EE800A9D5CB /* ViewController.swift in Sources */,
 				CBE8C02F234C2EE800A9D5CB /* Nezly.xcdatamodeld in Sources */,
 				CBE8C027234C2EE800A9D5CB /* AppDelegate.swift in Sources */,
+				CB3272122355698E00617A2E /* Category.swift in Sources */,
 				CBE8C049234C66E700A9D5CB /* AuctionCollectionViewCell.swift in Sources */,
+				CB32721423556B1C00617A2E /* Categories.swift in Sources */,
 				CB0038F6234EE3FA00A8CF72 /* UICollectionView.swift in Sources */,
 				CBE8C03C234C2FBA00A9D5CB /* HomeViewController.swift in Sources */,
 			);

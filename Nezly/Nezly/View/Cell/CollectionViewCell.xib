@@ -19,26 +19,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="168" height="26"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3h-C0-vpH">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iP2-2p-UQ6">
                         <rect key="frame" x="0.0" y="0.0" width="168" height="26"/>
                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                        <state key="normal" title="Button">
-                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </state>
-                    </button>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="N3h-C0-vpH" secondAttribute="bottom" id="Mq2-hd-rNm"/>
-                <constraint firstItem="N3h-C0-vpH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tjG-3R-XvB"/>
-                <constraint firstItem="N3h-C0-vpH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="yuf-f0-yrW"/>
-                <constraint firstAttribute="trailing" secondItem="N3h-C0-vpH" secondAttribute="trailing" id="z8b-Sb-GzQ"/>
+                <constraint firstItem="iP2-2p-UQ6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="KAK-Z0-kUy"/>
+                <constraint firstAttribute="trailing" secondItem="iP2-2p-UQ6" secondAttribute="trailing" id="L65-bf-5Jc"/>
+                <constraint firstItem="iP2-2p-UQ6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OlZ-lS-gFh"/>
+                <constraint firstAttribute="bottom" secondItem="iP2-2p-UQ6" secondAttribute="bottom" id="oWk-gp-JZT"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="168" height="26"/>
             <connections>
-                <outlet property="nameButton" destination="N3h-C0-vpH" id="Z7B-hr-zuV"/>
+                <outlet property="nameLabel" destination="iP2-2p-UQ6" id="Opr-lq-Cu3"/>
             </connections>
             <point key="canvasLocation" x="107.24637681159422" y="102.45535714285714"/>
         </collectionViewCell>

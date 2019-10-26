@@ -37,6 +37,9 @@
                                             <constraint firstAttribute="width" constant="17" id="Xp0-fh-tOQ"/>
                                         </constraints>
                                         <state key="normal" image="Group 17"/>
+                                        <connections>
+                                            <action selector="removeCell:" destination="gTV-IL-0wX" eventType="touchUpInside" id="R5e-bW-siP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

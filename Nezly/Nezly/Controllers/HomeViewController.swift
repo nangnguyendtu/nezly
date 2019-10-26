@@ -11,120 +11,244 @@ import UIKit
 class HomeViewController: UIViewController {
     
     // MARK: - IBOutlet
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var collectionView2: UICollectionView!
-    @IBOutlet weak var collectionView3: UICollectionView!
-    @IBOutlet weak var collectionView4: UICollectionView!
+    @IBOutlet weak var parentCollectionView: UICollectionView!
+    @IBOutlet weak var subCollectionView: UICollectionView!
+    @IBOutlet weak var listCollectionView: UICollectionView!
+    @IBOutlet weak var selectedCollectionView: UICollectionView!
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var nameTextField: UITextField!
- 
-    
-    
+    @IBOutlet weak var topSubView: NSLayoutConstraint!
+    @IBOutlet weak var topSeclectedView: NSLayoutConstraint!
+    @IBOutlet weak var heightTopview: NSLayoutConstraint!
+    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var topView: UIView!
     // MARK: - Variable
-    var Arrays1 = ["CANNABIS","CULTIVATION","SERVICES"]
-    var Arrays2 = ["FLOWER","CARTRIGES","DIAMONDS","TRIM","PRE-ROLLS"]
+    var parentArrays = [Category]()
+    var subArrays = [Category]()
+    var selectedArrays = [Category]()
+    var selected = [Int]()
+    var selectedSub = [Int]()
+    //var selectedParent: Category?
+    
     static let storyboadId = "HomeViewController"
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    collectionView.getCellFromNib(identifier: "CollectionViewCell")
-    collectionView2.getCellFromNib(identifier: "CollectionViewCell")
-    collectionView3.getCellFromNib(identifier: "AuctionCollectionViewCell")
-    collectionView4.getCellFromNib(identifier: "ListCollectionViewCell")
+    parentCollectionView.getCellFromNib(identifier: "CollectionViewCell")
+    subCollectionView.getCellFromNib(identifier: "CollectionViewCell")
+    listCollectionView.getCellFromNib(identifier: "AuctionCollectionViewCell")
+    selectedCollectionView.getCellFromNib(identifier: "ListCollectionViewCell")
         
     containerView.layer.cornerRadius = 5
-    nameTextField.font = UIFont.systemFont(ofSize: 15, weight: .regular)
-     
-    // MARK:
-    let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 91, height: 36))
-    imageView.contentMode = .scaleAspectFit
-    let image = UIImage(named: "logo")
-    imageView.image = image
-    navigationItem.titleView = imageView
+    searchTextField.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+    searchTextField.attributedPlaceholder = NSAttributedString(string: searchTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
     
+    imageView()
+        
+    // MARK: - Loadjson
+    loadJson(filename: "categories")
+
+    }
+    func imageView(){
+        // MARK: - NavigationBar
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 91, height: 36))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "logo")
+        imageView.image = image
+        navigationItem.titleView = imageView
+    }
+    
+    func loadJson(filename fileName: String) {
+        if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                let jsonData = try decoder.decode(Response.self, from: data)
+                self.parentArrays = jsonData.categories
+                self.parentCollectionView.reloadData()
+            } catch {
+                print("error:\(error)")
+            }
+        }
     }
 }
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == self.collectionView {
-            return Arrays1.count
+        if collectionView == self.parentCollectionView {
+            return parentArrays.count
         }
-        if collectionView == self.collectionView2 {
-            return Arrays2.count
+        if collectionView == self.subCollectionView {
+            return subArrays.count
         }
-        if collectionView == self.collectionView4{
-            return Arrays2.count
+        if collectionView == self.selectedCollectionView{
+            return selectedArrays.count
         } else {
             return 4
         }
 
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if  collectionView == self.collectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
-            cell.nameButton.setTitle(Arrays1[indexPath.row], for: .normal)
+        if  collectionView == self.parentCollectionView {
+            let cell = parentCollectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+            cell.nameLabel.text = parentArrays[indexPath.row].title.uppercased()
+            // MARK:
+            if let selectedParentId = selected.first {
+                if parentArrays[indexPath.item].id == selectedParentId
+                {
+                    cell.nameLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+                } else {
+                    cell.nameLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+                }
+            }
             return cell
         }
-        if  collectionView == self.collectionView2 {
-            let cell2 = collectionView2.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
-            cell2.nameButton.setTitle(Arrays2[indexPath.row], for: .normal)
-            cell2.nameButton.setTitleColor(.gray, for: .normal)
-            cell2.nameButton.backgroundColor = UIColor.white
-            return cell2
+        if  collectionView == self.subCollectionView {
+            let cell = subCollectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+            cell.nameLabel.textColor = .gray
+            cell.nameLabel.backgroundColor = .white
+            cell.nameLabel.text = subArrays[indexPath.row].title.uppercased()
+             // MARK:
+                if selectedSub.contains(subArrays[indexPath.row].id)
+                {
+                    cell.nameLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+                } else {
+                    cell.nameLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+                }
+            return cell
         }
-        if collectionView == self.collectionView4 {
-            let cell4 = collectionView4.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as! ListCollectionViewCell
-            cell4.nameLabel?.text = Arrays2[indexPath.row]
-            return cell4
+        if collectionView == self.selectedCollectionView {
+            let cell = selectedCollectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as! ListCollectionViewCell
+            cell.nameLabel.text = selectedArrays[indexPath.row].title.uppercased()
+            cell.index = indexPath
+            cell.delegate = self
+            return cell
         } else {
-            let cell3 = collectionView3.dequeueReusableCell(withReuseIdentifier: "AuctionCollectionViewCell", for: indexPath) as! AuctionCollectionViewCell
-            return cell3
+            let cell = listCollectionView.dequeueReusableCell(withReuseIdentifier: "AuctionCollectionViewCell", for: indexPath) as! AuctionCollectionViewCell
+            return cell
             
         }
-        
     }
-   
+}
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.parentCollectionView {
+            let parent = parentArrays[indexPath.row]
+            subArrays = parent.categories ?? []
+            subCollectionView.reloadData()
+            
+            selected = [parent.id]
+            parentCollectionView.reloadData()
+    
+            // MARK: - Change constraint
+            view.layoutIfNeeded()
+            if self.subArrays.count != 0 {
+                self.topSubView.constant = 0
+            } else {
+                self.topSubView.constant = -45
+                
+            }
+            UIView.animate(withDuration: 0.5
+            , animations: {
+                self.view.layoutIfNeeded()
+          }, completion: nil)
+           
+        }
+        else if collectionView == self.subCollectionView{
+            let sub = subArrays[indexPath.row]
+            
+            if let index = selectedArrays.firstIndex(where: { $0.id == sub.id }) {
+                selectedArrays.remove(at: index)
+                selectedCollectionView.reloadData()
+                
+                selectedSub.remove(at: index)
+                subCollectionView.reloadData()
+            } else {
+                selectedArrays.append(sub)
+                selectedCollectionView.reloadData()
+                
+                selectedSub.append(sub.id)
+                subCollectionView.reloadData()
+            }
+            // MARK: - Change constraint
+            view.layoutIfNeeded()
+            if self.selectedArrays.count == 0 {
+                self.topSeclectedView.constant = -45
+                self.heightTopview.constant = 85
+            } else {
+                self.topSeclectedView.constant = 0
+                self.heightTopview.constant = 130
+            }
+            UIView.animate(withDuration: 0.5
+                , animations: {
+                    self.view.layoutIfNeeded()
+            }, completion: nil)
+        }
+    
+    }
 }
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == self.collectionView {
+        
+        if collectionView == self.parentCollectionView {
             let label = UILabel(frame: CGRect.zero)
-            label.text = Arrays1[indexPath.item]
+            label.text = parentArrays[indexPath.item].title.uppercased()
             label.sizeToFit()
             return CGSize(width: label.frame.width, height: collectionView.frame.height - 10)
         }
-        if collectionView == self.collectionView2 {
+        if collectionView == self.subCollectionView {
             let label = UILabel(frame: CGRect.zero)
-            label.text = Arrays2[indexPath.item]
+            label.text = subArrays[indexPath.row].title.uppercased()
             label.sizeToFit()
-            return CGSize(width: label.frame.width, height: collectionView2.frame.height - 20)
+            return CGSize(width: label.frame.width, height: subCollectionView.frame.height - 20)
         }
-        if collectionView == self.collectionView3 {
-            return CGSize(width: (collectionView3.frame.width - 10) / 2, height: 290)
+        if collectionView == self.listCollectionView {
+            return CGSize(width: (listCollectionView.frame.width - 3) / 2, height: 290)
         } else {
             let label = UILabel(frame: CGRect.zero)
-            label.text = Arrays2[indexPath.item]
+            label.text = selectedArrays[indexPath.item].title.uppercased()
             label.sizeToFit()
-            return CGSize(width: label.frame.width + 20, height: collectionView4.frame.height - 15)
+            return CGSize(width: label.frame.width + 20, height: selectedCollectionView.frame.height - 20)
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        if collectionView == self.collectionView {
+        if collectionView == self.parentCollectionView {
             return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 28)
         }
-        if collectionView == self.collectionView2 {
+        if collectionView == self.subCollectionView {
             return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 18)
         }
-        if collectionView == self.collectionView3 {
+        if collectionView == self.listCollectionView {
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         } else {
             return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         }
     }
     
+}
+extension HomeViewController:  DataCollectionProtocol {
+    func removeCell(indx: Int) {
+    selectedArrays.remove(at: indx)
+    selectedCollectionView.reloadData()
+        
+    selectedSub.remove(at: indx)
+    subCollectionView.reloadData()
+    
+    // MARK: - Change constraint
+    view.layoutIfNeeded()
+        if self.selectedArrays.count == 0 {
+            self.topSeclectedView.constant = -45
+            self.heightTopview.constant = 85
+        } else {
+            self.topSeclectedView.constant = 0
+            self.heightTopview.constant = 130
+        }
+
+    UIView.animate(withDuration: 0.5
+        , animations: {
+            self.view.layoutIfNeeded()
+    }, completion: nil)
+    }
 }

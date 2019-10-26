@@ -10,12 +10,12 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var nameButton: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
-    nameButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+    nameLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
     }
 
 }
