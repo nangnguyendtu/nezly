@@ -24,6 +24,24 @@ class PopupViewController: UIViewController {
     
     static let storyboadId = "PopupViewController"
     
+    // MARK: -View life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        customProgressView()
+        
+        containerView.backgroundColor = UIColor(rgb: 0x472E7D)
+        submitButton.backgroundColor = UIColor(rgb: 0x8863D5)
+        
+        containerView.layer.cornerRadius = 20
+        cancelButton.layer.borderWidth = 1
+        cancelButton.layer.borderColor = UIColor.white.cgColor
+        
+        tableView.getCellFromNib(identifier: "UserTableViewCell")
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        
+    }
+    
     // MARK: -IBAction
     @IBAction func cancelInfo(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -42,24 +60,6 @@ class PopupViewController: UIViewController {
             , animations: {
                 self.view.layoutIfNeeded()
         }, completion: nil)
-    }
-    
-    // MARK: -View life cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        customProgressView()
-        
-        containerView.backgroundColor = UIColor(rgb: 0x472E7D)
-        submitButton.backgroundColor = UIColor(rgb: 0x8863D5)
-        
-        containerView.layer.cornerRadius = 20
-        cancelButton.layer.borderWidth = 1
-        cancelButton.layer.borderColor = UIColor.white.cgColor
-        
-        tableView.getCellFromNib(identifier: "UserTableViewCell")
-        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-        
     }
     
     // MARK: -CustomProgressView

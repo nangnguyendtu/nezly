@@ -137,21 +137,21 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="center" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ku-cB-az4">
-                                                        <rect key="frame" x="0.0" y="0.0" width="23" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="20.5" height="40"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-13" maxY="-4"/>
                                                         <state key="normal" image="search"/>
                                                     </button>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Drip system, empty cartridges" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yQ5-sw-mYi">
-                                                        <rect key="frame" x="36" y="0.0" width="270.5" height="40"/>
+                                                        <rect key="frame" x="33.5" y="0.0" width="271" height="40"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line" translatesAutoresizingMaskIntoConstraints="NO" id="O1P-Ze-6Me">
-                                                        <rect key="frame" x="319.5" y="0.0" width="7.5" height="40"/>
+                                                        <rect key="frame" x="317.5" y="0.0" width="20.5" height="40"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="re4-Tf-f2u">
-                                                        <rect key="frame" x="340" y="0.0" width="42" height="40"/>
+                                                        <rect key="frame" x="351" y="0.0" width="31" height="40"/>
                                                         <inset key="imageEdgeInsets" minX="-9" minY="0.0" maxX="0.0" maxY="-5"/>
                                                         <state key="normal" image="mapIcon"/>
                                                     </button>
@@ -171,12 +171,12 @@
                                         <rect key="frame" x="16" y="40" width="382" height="43"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9e-df-p65">
-                                                <rect key="frame" x="0.0" y="0.0" width="59" height="43"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="43"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="-3" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" image="Fill 1"/>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line" translatesAutoresizingMaskIntoConstraints="NO" id="ngC-v5-iBA">
-                                                <rect key="frame" x="64" y="0.0" width="6" height="43"/>
+                                                <rect key="frame" x="54" y="0.0" width="16" height="43"/>
                                             </imageView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5kp-26-hGZ">
                                                 <rect key="frame" x="75" y="0.0" width="307" height="43"/>
