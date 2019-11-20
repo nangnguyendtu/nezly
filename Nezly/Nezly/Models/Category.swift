@@ -14,9 +14,6 @@ struct Category : Codable, Equatable {
     var description: String?
     var categories: [Category]?
     static func == (lhs: Category, rhs: Category) -> Bool {
-        return
-                lhs.id == rhs.id &&
-                lhs.title == rhs.title &&
-                lhs.description == rhs.description
+        return lhs.id == rhs.id 
     }
 }

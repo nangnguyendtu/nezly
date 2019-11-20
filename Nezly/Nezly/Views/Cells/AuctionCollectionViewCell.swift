@@ -32,6 +32,9 @@ class AuctionCollectionViewCell: UICollectionViewCell {
         nameLabel5.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
         nameLabel6.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
         nameButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .regular)
+        
+        nameLabel4.backgroundColor = UIColor(rgb: 0x8863D5)
+        containerView.backgroundColor = UIColor(rgb: 0x8863D5)
     
         containerView.layer.shadowColor = UIColor.gray.cgColor
         containerView.layer.shadowOpacity = 0.2

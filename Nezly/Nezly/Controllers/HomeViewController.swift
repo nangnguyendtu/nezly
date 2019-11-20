@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var heightTopview: NSLayoutConstraint!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var topView: UIView!
+    
     // MARK: - Variable
     var parentArrays = [Category]()
     var subArrays = [Category]()
@@ -31,27 +32,27 @@ class HomeViewController: UIViewController {
     
     static let storyboadId = "HomeViewController"
     
-
+    // MARK: -View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    parentCollectionView.getCellFromNib(identifier: "CollectionViewCell")
-    subCollectionView.getCellFromNib(identifier: "CollectionViewCell")
-    listCollectionView.getCellFromNib(identifier: "AuctionCollectionViewCell")
-    selectedCollectionView.getCellFromNib(identifier: "ListCollectionViewCell")
+        parentCollectionView.getCellFromNib(identifier: "CollectionViewCell")
+        subCollectionView.getCellFromNib(identifier: "CollectionViewCell")
+        listCollectionView.getCellFromNib(identifier: "AuctionCollectionViewCell")
+        selectedCollectionView.getCellFromNib(identifier: "ListCollectionViewCell")
         
-    containerView.layer.cornerRadius = 5
-    searchTextField.font = UIFont.systemFont(ofSize: 15, weight: .regular)
-    searchTextField.attributedPlaceholder = NSAttributedString(string: searchTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
-    
-    imageView()
+        containerView.layer.cornerRadius = 5
+        searchTextField.attributedPlaceholder = NSAttributedString(string: searchTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
         
-    // MARK: - Loadjson
-    loadJson(filename: "categories")
+        imageView()
+        
+        // MARK: - Loadjson
+        loadJson(filename: "categories")
 
     }
+
+    
     func imageView(){
-        // MARK: - NavigationBar
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 91, height: 36))
         imageView.contentMode = .scaleAspectFit
         let image = UIImage(named: "logo")
@@ -87,14 +88,14 @@ extension HomeViewController: UICollectionViewDataSource {
         } else {
             return 4
         }
-
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if  collectionView == self.parentCollectionView {
             let cell = parentCollectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
             cell.nameLabel.text = parentArrays[indexPath.row].title.uppercased()
-            // MARK:
+
             if let selectedParentId = selected.first {
                 if parentArrays[indexPath.item].id == selectedParentId
                 {
@@ -110,7 +111,7 @@ extension HomeViewController: UICollectionViewDataSource {
             cell.nameLabel.textColor = .gray
             cell.nameLabel.backgroundColor = .white
             cell.nameLabel.text = subArrays[indexPath.row].title.uppercased()
-             // MARK:
+             
                 if selectedSub.contains(subArrays[indexPath.row].id)
                 {
                     cell.nameLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
@@ -156,10 +157,10 @@ extension HomeViewController: UICollectionViewDelegate {
           }, completion: nil)
            
         }
-        else if collectionView == self.subCollectionView{
+        else if collectionView == self.subCollectionView {
             let sub = subArrays[indexPath.row]
             
-            if let index = selectedArrays.firstIndex(where: { $0.id == sub.id }) {
+            if let index = selectedArrays.firstIndex(of: sub) {
                 selectedArrays.remove(at: index)
                 selectedCollectionView.reloadData()
                 
@@ -185,6 +186,12 @@ extension HomeViewController: UICollectionViewDelegate {
                 , animations: {
                     self.view.layoutIfNeeded()
             }, completion: nil)
+        }
+        else if collectionView == self.listCollectionView {
+            let listingView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "listingNC") as! UINavigationController
+            //let vc = listingView.topViewController as! ListingViewController
+            //let navController = UINavigationController(rootViewController: listingView)
+            self.present(listingView, animated:true, completion: nil)
         }
     
     }
@@ -252,3 +259,4 @@ extension HomeViewController:  DataCollectionProtocol {
     }, completion: nil)
     }
 }
+

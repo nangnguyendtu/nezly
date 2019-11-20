@@ -8,9 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		CB0038F6234EE3FA00A8CF72 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0038F5234EE3FA00A8CF72 /* UICollectionView.swift */; };
+		CB0145CE2364408F00F9DAE1 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0145CD2364408F00F9DAE1 /* PopupViewController.swift */; };
 		CB327210235567E000617A2E /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = CB32720F235567E000617A2E /* categories.json */; };
 		CB3272122355698E00617A2E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3272112355698E00617A2E /* Category.swift */; };
 		CB32721423556B1C00617A2E /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32721323556B1C00617A2E /* Categories.swift */; };
+		CB39B48A2384E83800961A02 /* Open Sans Extrabold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB39B4892384E83800961A02 /* Open Sans Extrabold.ttf */; };
+		CB39B48C2384EB5000961A02 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB39B48B2384EB5000961A02 /* OpenSans-Regular.ttf */; };
+		CB39B48E2384EB5F00961A02 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB39B48D2384EB5F00961A02 /* OpenSans-Semibold.ttf */; };
+		CB39B4902384ED0500961A02 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB39B48F2384ED0500961A02 /* OpenSans-Bold.ttf */; };
+		CB39B4922384F0B200961A02 /* AvenirLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB39B4912384F0B200961A02 /* AvenirLTStd-Book.otf */; };
+		CB5DE070236F23A60084D50F /* BidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DE06F236F23A60084D50F /* BidViewController.swift */; };
+		CB9F384A2363E0F300A85E2D /* listings.json in Resources */ = {isa = PBXBuildFile; fileRef = CB9F38492363E0F300A85E2D /* listings.json */; };
+		CB9F384E2363E66B00A85E2D /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9F384D2363E66B00A85E2D /* ListingViewController.swift */; };
+		CB9F38512363F66900A85E2D /* ListingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9F384F2363F66900A85E2D /* ListingCollectionViewCell.swift */; };
+		CB9F38522363F66A00A85E2D /* ListingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB9F38502363F66900A85E2D /* ListingCollectionViewCell.xib */; };
+		CBDEEB9F2366CEEB0037B8A3 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEEB9D2366CEEB0037B8A3 /* UserTableViewCell.swift */; };
+		CBDEEBA02366CEEB0037B8A3 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDEEB9E2366CEEB0037B8A3 /* UserTableViewCell.xib */; };
+		CBDEEBA22366CF270037B8A3 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEEBA12366CF270037B8A3 /* UITableView.swift */; };
+		CBDEEBA42366DD410037B8A3 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEEBA32366DD410037B8A3 /* UIColor.swift */; };
 		CBE8C027234C2EE800A9D5CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE8C026234C2EE800A9D5CB /* AppDelegate.swift */; };
 		CBE8C029234C2EE800A9D5CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE8C028234C2EE800A9D5CB /* ViewController.swift */; };
 		CBE8C02C234C2EE800A9D5CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE8C02A234C2EE800A9D5CB /* Main.storyboard */; };
@@ -28,9 +43,24 @@
 
 /* Begin PBXFileReference section */
 		CB0038F5234EE3FA00A8CF72 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		CB0145CD2364408F00F9DAE1 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		CB32720F235567E000617A2E /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		CB3272112355698E00617A2E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		CB32721323556B1C00617A2E /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		CB39B4892384E83800961A02 /* Open Sans Extrabold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Extrabold.ttf"; sourceTree = "<group>"; };
+		CB39B48B2384EB5000961A02 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		CB39B48D2384EB5F00961A02 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		CB39B48F2384ED0500961A02 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		CB39B4912384F0B200961A02 /* AvenirLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Book.otf"; sourceTree = "<group>"; };
+		CB5DE06F236F23A60084D50F /* BidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidViewController.swift; sourceTree = "<group>"; };
+		CB9F38492363E0F300A85E2D /* listings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = listings.json; sourceTree = "<group>"; };
+		CB9F384D2363E66B00A85E2D /* ListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
+		CB9F384F2363F66900A85E2D /* ListingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCollectionViewCell.swift; sourceTree = "<group>"; };
+		CB9F38502363F66900A85E2D /* ListingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListingCollectionViewCell.xib; sourceTree = "<group>"; };
+		CBDEEB9D2366CEEB0037B8A3 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		CBDEEB9E2366CEEB0037B8A3 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		CBDEEBA12366CF270037B8A3 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		CBDEEBA32366DD410037B8A3 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		CBE8C023234C2EE800A9D5CB /* Nezly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nezly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE8C026234C2EE800A9D5CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBE8C028234C2EE800A9D5CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,12 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CB0038F4234EE3D600A8CF72 /* Extension */ = {
+		CB0038F4234EE3D600A8CF72 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				CB0038F5234EE3FA00A8CF72 /* UICollectionView.swift */,
+				CBDEEBA12366CF270037B8A3 /* UITableView.swift */,
+				CBDEEBA32366DD410037B8A3 /* UIColor.swift */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CBE8C01A234C2EE800A9D5CB = {
@@ -87,9 +119,9 @@
 			isa = PBXGroup;
 			children = (
 				CBE8C026234C2EE800A9D5CB /* AppDelegate.swift */,
-				CB0038F4234EE3D600A8CF72 /* Extension */,
-				CBE8C03F234C3D6900A9D5CB /* Model */,
-				CBE8C03D234C3D5300A9D5CB /* View */,
+				CB0038F4234EE3D600A8CF72 /* Extensions */,
+				CBE8C03F234C3D6900A9D5CB /* Models */,
+				CBE8C03D234C3D5300A9D5CB /* Views */,
 				CBE8C03E234C3D5D00A9D5CB /* Controllers */,
 				CBE8C040234C3D9A00A9D5CB /* Resources */,
 				CBE8C041234C3DE300A9D5CB /* Supporting Files */,
@@ -97,12 +129,12 @@
 			path = Nezly;
 			sourceTree = "<group>";
 		};
-		CBE8C03D234C3D5300A9D5CB /* View */ = {
+		CBE8C03D234C3D5300A9D5CB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CBE8C042234C3DFB00A9D5CB /* Cell */,
+				CBE8C042234C3DFB00A9D5CB /* Cells */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		CBE8C03E234C3D5D00A9D5CB /* Controllers */ = {
@@ -110,23 +142,27 @@
 			children = (
 				CBE8C028234C2EE800A9D5CB /* ViewController.swift */,
 				CBE8C03B234C2FBA00A9D5CB /* HomeViewController.swift */,
+				CB9F384D2363E66B00A85E2D /* ListingViewController.swift */,
+				CB0145CD2364408F00F9DAE1 /* PopupViewController.swift */,
+				CB5DE06F236F23A60084D50F /* BidViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		CBE8C03F234C3D6900A9D5CB /* Model */ = {
+		CBE8C03F234C3D6900A9D5CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				CB3272112355698E00617A2E /* Category.swift */,
 				CB32721323556B1C00617A2E /* Categories.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CBE8C040234C3D9A00A9D5CB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				CB32720F235567E000617A2E /* categories.json */,
+				CB9F38492363E0F300A85E2D /* listings.json */,
 				CBE8C030234C2EEB00A9D5CB /* Assets.xcassets */,
 				CBE8C02A234C2EE800A9D5CB /* Main.storyboard */,
 				CBE8C032234C2EEB00A9D5CB /* LaunchScreen.storyboard */,
@@ -138,12 +174,17 @@
 			isa = PBXGroup;
 			children = (
 				CBE8C035234C2EEB00A9D5CB /* Info.plist */,
+				CB39B4912384F0B200961A02 /* AvenirLTStd-Book.otf */,
+				CB39B48F2384ED0500961A02 /* OpenSans-Bold.ttf */,
+				CB39B4892384E83800961A02 /* Open Sans Extrabold.ttf */,
+				CB39B48B2384EB5000961A02 /* OpenSans-Regular.ttf */,
+				CB39B48D2384EB5F00961A02 /* OpenSans-Semibold.ttf */,
 				CBE8C02D234C2EE800A9D5CB /* Nezly.xcdatamodeld */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CBE8C042234C3DFB00A9D5CB /* Cell */ = {
+		CBE8C042234C3DFB00A9D5CB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				CBE8C043234C3E1F00A9D5CB /* CollectionViewCell.swift */,
@@ -152,8 +193,12 @@
 				CBE8C048234C66E700A9D5CB /* AuctionCollectionViewCell.xib */,
 				CBF0823A234C913500DCB0B8 /* ListCollectionViewCell.swift */,
 				CBF0823B234C913500DCB0B8 /* ListCollectionViewCell.xib */,
+				CB9F384F2363F66900A85E2D /* ListingCollectionViewCell.swift */,
+				CB9F38502363F66900A85E2D /* ListingCollectionViewCell.xib */,
+				CBDEEB9D2366CEEB0037B8A3 /* UserTableViewCell.swift */,
+				CBDEEB9E2366CEEB0037B8A3 /* UserTableViewCell.xib */,
 			);
-			path = Cell;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,12 +259,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB9F38522363F66A00A85E2D /* ListingCollectionViewCell.xib in Resources */,
 				CB327210235567E000617A2E /* categories.json in Resources */,
+				CB39B48A2384E83800961A02 /* Open Sans Extrabold.ttf in Resources */,
+				CB39B48E2384EB5F00961A02 /* OpenSans-Semibold.ttf in Resources */,
 				CBE8C034234C2EEB00A9D5CB /* LaunchScreen.storyboard in Resources */,
+				CB9F384A2363E0F300A85E2D /* listings.json in Resources */,
+				CB39B4922384F0B200961A02 /* AvenirLTStd-Book.otf in Resources */,
+				CBDEEBA02366CEEB0037B8A3 /* UserTableViewCell.xib in Resources */,
 				CBE8C031234C2EEB00A9D5CB /* Assets.xcassets in Resources */,
+				CB39B4902384ED0500961A02 /* OpenSans-Bold.ttf in Resources */,
 				CBF0823D234C913500DCB0B8 /* ListCollectionViewCell.xib in Resources */,
 				CBE8C04A234C66E700A9D5CB /* AuctionCollectionViewCell.xib in Resources */,
 				CBE8C046234C3E1F00A9D5CB /* CollectionViewCell.xib in Resources */,
+				CB39B48C2384EB5000961A02 /* OpenSans-Regular.ttf in Resources */,
 				CBE8C02C234C2EE800A9D5CB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,6 +286,12 @@
 			files = (
 				CBE8C045234C3E1F00A9D5CB /* CollectionViewCell.swift in Sources */,
 				CBF0823C234C913500DCB0B8 /* ListCollectionViewCell.swift in Sources */,
+				CBDEEBA22366CF270037B8A3 /* UITableView.swift in Sources */,
+				CBDEEB9F2366CEEB0037B8A3 /* UserTableViewCell.swift in Sources */,
+				CB9F384E2363E66B00A85E2D /* ListingViewController.swift in Sources */,
+				CBDEEBA42366DD410037B8A3 /* UIColor.swift in Sources */,
+				CB9F38512363F66900A85E2D /* ListingCollectionViewCell.swift in Sources */,
+				CB5DE070236F23A60084D50F /* BidViewController.swift in Sources */,
 				CBE8C029234C2EE800A9D5CB /* ViewController.swift in Sources */,
 				CBE8C02F234C2EE800A9D5CB /* Nezly.xcdatamodeld in Sources */,
 				CBE8C027234C2EE800A9D5CB /* AppDelegate.swift in Sources */,
@@ -241,6 +300,7 @@
 				CB32721423556B1C00617A2E /* Categories.swift in Sources */,
 				CB0038F6234EE3FA00A8CF72 /* UICollectionView.swift in Sources */,
 				CBE8C03C234C2FBA00A9D5CB /* HomeViewController.swift in Sources */,
+				CB0145CE2364408F00F9DAE1 /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

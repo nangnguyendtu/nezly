@@ -207,7 +207,7 @@
                 <outlet property="nameLabel5" destination="jXw-Qw-Hyr" id="5TQ-54-P4n"/>
                 <outlet property="nameLabel6" destination="DHL-Yk-6LF" id="7bN-EX-7k7"/>
             </connections>
-            <point key="canvasLocation" x="345.6521739130435" y="111.16071428571428"/>
+            <point key="canvasLocation" x="151" y="93"/>
         </collectionViewCell>
     </objects>
     <resources>
