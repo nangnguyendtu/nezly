@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomeViewController: UIViewController {
     
@@ -23,6 +24,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var topView: UIView!
     
     // MARK: - Variable
+    var postArrays = [Post]()
     var parentArrays = [Category]()
     var subArrays = [Category]()
     var selectedArrays = [Category]()
@@ -46,11 +48,10 @@ class HomeViewController: UIViewController {
         
         imageView()
         
-        // MARK: - Loadjson
+        //Loadjson
         loadJson(filename: "categories")
-
+        loadJsonlistings(filename: "listings")
     }
-
     
     func imageView(){
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 91, height: 36))
@@ -73,6 +74,19 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
+    func loadJsonlistings(filename fileName: String) {
+        if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                let jsonData = try decoder.decode(Posts.self, from: data)
+                self.postArrays = jsonData.posts
+            } catch {
+                print("error:\(error)")
+            }
+        }
+    }
 }
 
 extension HomeViewController: UICollectionViewDataSource {
@@ -86,7 +100,7 @@ extension HomeViewController: UICollectionViewDataSource {
         if collectionView == self.selectedCollectionView{
             return selectedArrays.count
         } else {
-            return 4
+            return postArrays.count
         }
         
     }
@@ -128,8 +142,26 @@ extension HomeViewController: UICollectionViewDataSource {
             return cell
         } else {
             let cell = listCollectionView.dequeueReusableCell(withReuseIdentifier: "AuctionCollectionViewCell", for: indexPath) as! AuctionCollectionViewCell
+            cell.titleLabel.text = postArrays[indexPath.row].title
+            cell.titleLabel.font = UIFont(name: "OpenSans", size: 12)
+            if postArrays[indexPath.row].is_auction == true {
+                cell.buyLabel.text = "Auction"
+                cell.buyLabel.font = UIFont(name: "OpenSans", size: 13)
+            } else if postArrays[indexPath.row].is_buynow == true {
+                cell.buyLabel.text = "Buy Now"
+                cell.buyLabel.font = UIFont(name: "OpenSans", size: 13)
+            } else {
+                cell.buyLabel.text = ""
+            }
+            //loadimage
+            if !self.postArrays[indexPath.row].image.image.url.isEmpty {
+                cell.imageView.sd_setImage(with: URL(string: self.postArrays[indexPath.row].image.image.url), completed: nil)
+            }
+            cell.priceLabel.text = "$" + String(postArrays[indexPath.row].price) + " Liter"
+            cell.buyLabel.font = UIFont(name: "OpenSans-Semibold", size: 13)
+            cell.quantityLabel.text = String(postArrays[indexPath.row].quantity) + " Liters"
+            cell.quantityLabel.font = UIFont(name: "OpenSans-Semibold", size: 13)
             return cell
-            
         }
     }
 }

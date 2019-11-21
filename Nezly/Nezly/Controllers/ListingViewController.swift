@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ListingViewController: UIViewController {
     
@@ -16,6 +17,9 @@ class ListingViewController: UIViewController {
     @IBOutlet weak var auctionButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var searchView: UIView!
+    
+    // MARK: - Variable
+    var postArrays = [Post]()
     
     static let storyboadId = "ListingViewController"
     
@@ -38,12 +42,13 @@ class ListingViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = true
         
+        loadJsonlistings(filename: "listings")
+        
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = true
-        
     }
     
     // MARK: -IBAction
@@ -60,6 +65,19 @@ class ListingViewController: UIViewController {
         let popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopupViewController") as! PopupViewController
         self.present(popup, animated: true)
     }
+    
+    func loadJsonlistings(filename fileName: String) {
+        if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                let jsonData = try decoder.decode(Posts.self, from: data)
+                self.postArrays = jsonData.posts
+            } catch {
+                print("error:\(error)")
+            }
+        }
+    }
 }
 
 extension ListingViewController: UICollectionViewDataSource {
@@ -69,6 +87,10 @@ extension ListingViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  listingCollectionView.dequeueReusableCell(withReuseIdentifier: "ListingCollectionViewCell", for: indexPath) as! ListingCollectionViewCell
+        //loadimage
+        if !self.postArrays[indexPath.row].image.image.url.isEmpty {
+            cell.viewImage.sd_setImage(with: URL(string: self.postArrays[indexPath.row].image.image.url), completed: nil)
+        }
         return cell
     }
 }
