@@ -117,7 +117,8 @@ extension HomeViewController: UICollectionViewDataSource {
         if  collectionView == self.parentCollectionView {
             let cell = parentCollectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
             cell.nameLabel.text = parentArrays[indexPath.row].title.uppercased()
-
+            
+            //Equatable
             if let selectedParentId = selected.first {
                 if parentArrays[indexPath.item].id == selectedParentId
                 {

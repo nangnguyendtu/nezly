@@ -17,7 +17,6 @@ class PopupViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var submitButton: UIButton!
-    @IBOutlet weak var heightView: NSLayoutConstraint!
     
     // MARK: - Variable
     var arrays = ["@username1: $6,350.0","@username1: $6,350.0","@username1: $6,350.0","@username1: $6,350.0"]
@@ -41,8 +40,11 @@ class PopupViewController: UIViewController {
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
         self.hideKeyboardWhenTappedAround()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
+
     // MARK: -IBAction
     @IBAction func cancelInfo(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -54,13 +56,18 @@ class PopupViewController: UIViewController {
         tableView.reloadData()
     }
     
-    @IBAction func selected(_ sender: Any) {
-        view.layoutIfNeeded()
-        self.heightView.constant = 750
-        UIView.animate(withDuration: 0.5
-            , animations: {
-                self.view.layoutIfNeeded()
-        }, completion: nil)
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     
     // MARK: -CustomProgressView
@@ -84,23 +91,12 @@ extension PopupViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
         cell.nameLabel.text = arrays[indexPath.row]
         cell.nameLabel.textColor = UIColor(rgb: 0xD8D8D8)
+        cell.selectionStyle = .none
         return cell
     }
     
 }
 
-extension PopupViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        view.layoutIfNeeded()
-        self.heightView.constant = 550
-        UIView.animate(withDuration: 0.5
-            , animations: {
-                self.view.layoutIfNeeded()
-        }, completion: nil)
-        return true
-    }
-}
 
 
 

@@ -20,6 +20,8 @@ class ListingViewController: UIViewController {
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var buyLabel: UILabel!
+    @IBOutlet weak var heightsearchView: NSLayoutConstraint!
+    @IBOutlet weak var chatTextField: UITextField!
     
     var posts = [Post]()
     var post: Post!
@@ -46,6 +48,9 @@ class ListingViewController: UIViewController {
         setColor()
         renderData()
         setFontdata()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -111,6 +116,20 @@ class ListingViewController: UIViewController {
         containerView.backgroundColor = UIColor(rgb: 0x8863D5)
     }
     
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.heightsearchView.constant == 48 {
+                self.heightsearchView.constant = self.heightsearchView.constant + keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.heightsearchView.constant != 48 {
+            self.heightsearchView.constant = 48
+        }
+    }
+    
 }
 
 extension ListingViewController: UICollectionViewDataSource {
@@ -162,6 +181,13 @@ extension UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+extension ListingViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

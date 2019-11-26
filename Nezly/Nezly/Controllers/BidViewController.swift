@@ -28,6 +28,9 @@ class BidViewController: UIViewController {
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var descriptionView: UIView!
+
     
     var postArrays = [Post]()
     var posts = [Post]()
@@ -47,15 +50,6 @@ class BidViewController: UIViewController {
         containerView2.layer.cornerRadius = 13
         labresultsButton.layer.cornerRadius = 3
         proofoflifeButton.layer.cornerRadius = 3
-    
-        containerView.backgroundColor = UIColor(rgb: 0x472E7D)
-        bidButton.backgroundColor = UIColor(rgb: 0x472E7D)
-        chatButton.backgroundColor = UIColor(rgb: 0x472E7D)
-        rectangleView.backgroundColor = UIColor(rgb: 0x472E7D)
-        labresultsButton.backgroundColor = UIColor(rgb: 0x8863D5)
-        proofoflifeButton.backgroundColor = UIColor(rgb: 0x8863D5)
-        followButton.backgroundColor = UIColor(rgb: 0x8863D5)
-        containerView2.backgroundColor = UIColor(rgb: 0x8863D5)
         
         listCollectionView.getCellFromNib(identifier: "ListingCollectionViewCell")
         listCollectionView2.getCellFromNib(identifier: "AuctionCollectionViewCell")
@@ -63,8 +57,12 @@ class BidViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = true
         
+        self.pageControl.numberOfPages = 3
+        self.pageControl.currentPage = 0
+        
         customProgressView()
         renderData()
+        setColor()
         //addBackgroundGradient()
         
     }
@@ -80,6 +78,9 @@ class BidViewController: UIViewController {
         if let index = posts.firstIndex(where: { $0.id == post.id }) {
             DispatchQueue.main.async {
                 self.listCollectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: false)
+//                self.heightContent.constant = self.listCollectionView2.contentSize.height
+//                self.heightcontentView.constant = 310 + 159 + 300 + 135 + 160 + listCollectionView2.contentSize.height
+
             }
         }
     }
@@ -108,6 +109,25 @@ class BidViewController: UIViewController {
 //        gradientLayer.colors = [UIColor.black.cgColor, UIColor.white.cgColor]
 //        listCollectionView.layer.insertSublayer(gradientLayer, at: 0)
 //    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let witdh = scrollView.frame.width - (scrollView.contentInset.left*2)
+        let index = scrollView.contentOffset.x / witdh
+        let roundedIndex = round(index)
+        self.pageControl?.currentPage = Int(roundedIndex)
+    }
+    
+    func setColor() {
+        containerView.backgroundColor = UIColor(rgb: 0x472E7D)
+        bidButton.backgroundColor = UIColor(rgb: 0x472E7D)
+        chatButton.backgroundColor = UIColor(rgb: 0x472E7D)
+        rectangleView.backgroundColor = UIColor(rgb: 0x472E7D)
+        labresultsButton.backgroundColor = UIColor(rgb: 0x8863D5)
+        proofoflifeButton.backgroundColor = UIColor(rgb: 0x8863D5)
+        followButton.backgroundColor = UIColor(rgb: 0x8863D5)
+        containerView2.backgroundColor = UIColor(rgb: 0x8863D5)
+    }
+    
     // MARK: -CustomProgressView
     func customProgressView() {
         progressView.transform = progressView.transform.scaledBy(x: 1, y: 8)
@@ -146,7 +166,6 @@ extension BidViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.listCollectionView2 {
             let cell = listCollectionView2.dequeueReusableCell(withReuseIdentifier: "AuctionCollectionViewCell", for: indexPath) as! AuctionCollectionViewCell
-            //self.heightContent.constant = self.listCollectionView2.contentSize.height
             cell.titleLabel.text = postArrays[indexPath.row].title
             cell.titleLabel.font = UIFont.OpenSansRegular(size: 12)
             if postArrays[indexPath.row].is_auction == true {

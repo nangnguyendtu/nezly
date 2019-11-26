@@ -496,7 +496,9 @@
                     <navigationItem key="navigationItem" id="MAe-EE-OAp"/>
                     <connections>
                         <outlet property="buyLabel" destination="eUR-9z-fVq" id="rBw-Wu-k0T"/>
+                        <outlet property="chatTextField" destination="MFa-Gp-lYd" id="8F1-6O-j1L"/>
                         <outlet property="containerView" destination="Dme-P6-lxh" id="eFx-Zk-thp"/>
+                        <outlet property="heightsearchView" destination="smL-uj-IxL" id="943-nx-Dvm"/>
                         <outlet property="infoButton" destination="eYR-7E-cWv" id="FhH-Ax-FS2"/>
                         <outlet property="listingCollectionView" destination="VLD-3z-zg4" id="k8I-k2-KRB"/>
                         <outlet property="priceLabel" destination="2hW-q3-L2w" id="OW8-Af-Q5q"/>
@@ -507,7 +509,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BTZ-O1-9Cz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1943" y="70"/>
+            <point key="canvasLocation" x="1942.0289855072465" y="69.642857142857139"/>
         </scene>
         <!--Popup View Controller-->
         <scene sceneID="KHQ-8t-yX8">
@@ -556,9 +558,8 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <connections>
-                                            <action selector="selected:" destination="5Hv-be-nBa" eventType="editingDidBegin" id="JMS-li-bDJ"/>
                                             <outlet property="delegate" destination="5Hv-be-nBa" id="xk2-Hr-dOW"/>
                                         </connections>
                                     </textField>
@@ -689,7 +690,6 @@
                     <connections>
                         <outlet property="cancelButton" destination="T6f-ps-Vha" id="bae-5Z-b8k"/>
                         <outlet property="containerView" destination="hSx-Af-Wzp" id="Gqv-EG-lQJ"/>
-                        <outlet property="heightView" destination="WyN-YO-whw" id="L3w-0y-ifd"/>
                         <outlet property="nameTextField" destination="xnk-M5-KIb" id="Cbz-Bb-ORM"/>
                         <outlet property="progressView" destination="nly-GN-hXU" id="JLy-jP-9QL"/>
                         <outlet property="submitButton" destination="ys8-Ad-Owi" id="aAF-5t-auE"/>
@@ -738,7 +738,7 @@
                                                 </cells>
                                                 <connections>
                                                     <outlet property="dataSource" destination="ooV-2r-xUU" id="Ejq-AH-pxh"/>
-                                                    <outlet property="delegate" destination="ooV-2r-xUU" id="g2b-FX-ahL"/>
+                                                    <outlet property="delegate" destination="ooV-2r-xUU" id="e4e-Da-2Pr"/>
                                                 </connections>
                                             </collectionView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IOV-gb-lQs">
@@ -1235,12 +1235,14 @@
                         <outlet property="containerView" destination="1HL-VE-sMj" id="Ecc-mr-1IS"/>
                         <outlet property="containerView2" destination="h5a-Zt-ztT" id="6pB-Km-Zj5"/>
                         <outlet property="descriptionLabel" destination="i5S-e4-vXN" id="A2F-XW-9kp"/>
+                        <outlet property="descriptionView" destination="gf1-bp-fah" id="aDI-iy-qKa"/>
                         <outlet property="followButton" destination="9hv-Td-1Me" id="Q32-Ea-ACj"/>
                         <outlet property="heightContent" destination="SRM-1s-HkK" id="vpl-Eb-SgK"/>
                         <outlet property="heightcontentView" destination="ORp-Ks-sxi" id="uyc-t2-zQX"/>
                         <outlet property="labresultsButton" destination="sAM-8p-5Yu" id="5g6-rx-iX6"/>
                         <outlet property="listCollectionView" destination="XLW-8V-1nh" id="BqN-cv-PJ9"/>
                         <outlet property="listCollectionView2" destination="prM-ch-BN2" id="J6u-TW-V1X"/>
+                        <outlet property="pageControl" destination="cyk-Hq-Vmw" id="zne-07-7st"/>
                         <outlet property="priceLabel" destination="Qfc-Vb-Z1l" id="vLl-wb-ned"/>
                         <outlet property="progressView" destination="Qzc-ej-K1w" id="StI-uV-Ipe"/>
                         <outlet property="proofoflifeButton" destination="2kq-Gv-YOz" id="bfp-95-cd7"/>
