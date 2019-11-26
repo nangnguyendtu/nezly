@@ -208,12 +208,12 @@
                 <outlet property="buttonView" destination="g7X-V8-q4A" id="BV4-cA-Zmw"/>
                 <outlet property="buyLabel" destination="K8F-Eb-9eA" id="URb-ig-Rah"/>
                 <outlet property="containerView" destination="YBS-6T-Evp" id="RfO-wg-mgR"/>
+                <outlet property="countryLabel" destination="gbY-Vo-Uhp" id="DC5-EI-CDF"/>
                 <outlet property="imageView" destination="fcW-5H-zfs" id="0ma-Le-Sox"/>
                 <outlet property="nameButton" destination="BVy-y1-gt4" id="mIK-xx-M5q"/>
-                <outlet property="nameLabel" destination="gbY-Vo-Uhp" id="PeW-Lb-ANk"/>
-                <outlet property="nameLabel3" destination="L6C-5N-VId" id="6Ik-1J-NT7"/>
                 <outlet property="priceLabel" destination="jXw-Qw-Hyr" id="2b1-Vz-Ixi"/>
                 <outlet property="quantityLabel" destination="DHL-Yk-6LF" id="Ujl-6H-qTl"/>
+                <outlet property="timeLabel" destination="L6C-5N-VId" id="aC3-Wx-7yb"/>
                 <outlet property="titleLabel" destination="DVk-Vn-VxY" id="Tvv-27-GUP"/>
             </connections>
             <point key="canvasLocation" x="151" y="93"/>

@@ -11,9 +11,9 @@ import UIKit
 class AuctionCollectionViewCell: UICollectionViewCell {
   
     @IBOutlet weak var buttonView: UIView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var nameLabel3: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var buyLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!

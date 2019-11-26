@@ -22,7 +22,17 @@ class BidViewController: UIViewController {
     @IBOutlet weak var proofoflifeButton: UIButton!
     @IBOutlet weak var followButton: UIButton!
     @IBOutlet weak var containerView2: UIView!
-
+    @IBOutlet weak var heightContent: NSLayoutConstraint!
+    @IBOutlet weak var heightcontentView: NSLayoutConstraint!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var quantityLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    var postArrays = [Post]()
+    var posts = [Post]()
+    var post: Post!
+    
     static let storyboadId = "BidViewController"
     
     // MARK: -View life cycle
@@ -47,20 +57,31 @@ class BidViewController: UIViewController {
         followButton.backgroundColor = UIColor(rgb: 0x8863D5)
         containerView2.backgroundColor = UIColor(rgb: 0x8863D5)
         
+        listCollectionView.getCellFromNib(identifier: "ListingCollectionViewCell")
         listCollectionView2.getCellFromNib(identifier: "AuctionCollectionViewCell")
         
         self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = true
         
         customProgressView()
-        addBackgroundGradient()
-
+        renderData()
+        //addBackgroundGradient()
+        
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = true
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let index = posts.firstIndex(where: { $0.id == post.id }) {
+            DispatchQueue.main.async {
+                self.listCollectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: false)
+            }
+        }
     }
     
     // MARK: -IBAction
@@ -80,14 +101,13 @@ class BidViewController: UIViewController {
         bidButton.backgroundColor = UIColor(rgb: 0x8863D5)
         bidButton.layer.borderWidth = 0
     }
-    
     // MARK: -GradientColectionview
-    private func addBackgroundGradient() {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = listCollectionView.bounds
-        gradientLayer.colors = [UIColor.black.cgColor, UIColor.white.cgColor]
-        listCollectionView.layer.insertSublayer(gradientLayer, at: 0)
-    }
+//    private func addBackgroundGradient() {
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.frame = listCollectionView.bounds
+//        gradientLayer.colors = [UIColor.black.cgColor, UIColor.white.cgColor]
+//        listCollectionView.layer.insertSublayer(gradientLayer, at: 0)
+//    }
     // MARK: -CustomProgressView
     func customProgressView() {
         progressView.transform = progressView.transform.scaledBy(x: 1, y: 8)
@@ -98,22 +118,79 @@ class BidViewController: UIViewController {
         progressView.tintColor = UIColor(rgb: 0x8863D5)
     }
     
+    func renderData() {
+        titleLabel.text = post.title
+        priceLabel.text = "$" + String(post.price) + " Liter"
+        quantityLabel.text = String(post.quantity) + " Liters"
+        descriptionLabel.text = post.description
+    }
+    
+    func setFontdata() {
+        titleLabel.font = UIFont.OpenSansExtrabold(size: 19)
+        priceLabel.font = UIFont.OpenSansSemibold(size: 19)
+        quantityLabel.font = UIFont.OpenSansSemibold(size: 19)
+        descriptionLabel.font = UIFont.OpenSansRegular(size: 14)
+    }
+    
 }
 
 extension BidViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return 4
+        if collectionView == self.listCollectionView2 {
+            return postArrays.count
+        } else {
+            return postArrays.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView == self.listCollectionView2 {
             let cell = listCollectionView2.dequeueReusableCell(withReuseIdentifier: "AuctionCollectionViewCell", for: indexPath) as! AuctionCollectionViewCell
+            //self.heightContent.constant = self.listCollectionView2.contentSize.height
+            cell.titleLabel.text = postArrays[indexPath.row].title
+            cell.titleLabel.font = UIFont.OpenSansRegular(size: 12)
+            if postArrays[indexPath.row].is_auction == true {
+                cell.buyLabel.text = "Auction"
+                cell.buyLabel.font = UIFont.OpenSansRegular(size: 13)
+            } else if postArrays[indexPath.row].is_buynow == true {
+                cell.buyLabel.text = "Buy Now"
+                cell.buyLabel.font = UIFont.OpenSansRegular(size: 13)
+            } else {
+                cell.buyLabel.text = ""
+            }
+            //loadimage
+            if !self.postArrays[indexPath.row].image.image.url.isEmpty {
+                cell.imageView.sd_setImage(with: URL(string: self.postArrays[indexPath.row].image.image.url), completed: nil)
+            }
+            cell.priceLabel.text = "$" + String(postArrays[indexPath.row].price) + " Liter"
+            cell.buyLabel.font = UIFont.OpenSansSemibold(size: 13)
+            cell.quantityLabel.text = String(postArrays[indexPath.row].quantity) + " Liters"
+            cell.quantityLabel.font = UIFont.OpenSansSemibold(size: 13)
             return cell
+        } else {
+            let cell = listCollectionView.dequeueReusableCell(withReuseIdentifier: "ListingCollectionViewCell", for: indexPath) as! ListingCollectionViewCell
+            if !self.posts[indexPath.row].image.image.url.isEmpty {
+                cell.viewImage.sd_setImage(with: URL(string: self.posts[indexPath.row].image.image.url), completed: nil)
+            }
+            return cell
+        }
     }
 }
 
 extension BidViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == self.listCollectionView2 {
             return CGSize(width: (listCollectionView2.frame.width - 10 )/2, height: 290)
+        } else {
+            return CGSize(width: listCollectionView.frame.width, height: listCollectionView.frame.height)
+        }
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        if collectionView == self.listCollectionView2 {
+            return 0
+        } else {
+            return 0
+        }
     }
         
 }

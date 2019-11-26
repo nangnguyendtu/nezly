@@ -40,6 +40,7 @@ class PopupViewController: UIViewController {
         tableView.getCellFromNib(identifier: "UserTableViewCell")
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
+        self.hideKeyboardWhenTappedAround()
     }
     
     // MARK: -IBAction
@@ -100,5 +101,6 @@ extension PopupViewController: UITextFieldDelegate {
         return true
     }
 }
+
 
 

@@ -51,6 +51,14 @@ class HomeViewController: UIViewController {
         //Loadjson
         loadJson(filename: "categories")
         loadJsonlistings(filename: "listings")
+        
+        //check font name
+//        for family: String in UIFont.familyNames {
+//            print("\(family)")
+//            for names: String in UIFont.fontNames(forFamilyName: family) {
+//                print("== \(names)")
+//            }
+//        }
     }
     
     func imageView(){
@@ -113,9 +121,9 @@ extension HomeViewController: UICollectionViewDataSource {
             if let selectedParentId = selected.first {
                 if parentArrays[indexPath.item].id == selectedParentId
                 {
-                    cell.nameLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+                    cell.nameLabel.font = UIFont.OpenSansSemibold(size: 15)
                 } else {
-                    cell.nameLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+                    cell.nameLabel.font = UIFont.OpenSansRegular(size: 15)
                 }
             }
             return cell
@@ -128,9 +136,9 @@ extension HomeViewController: UICollectionViewDataSource {
              
                 if selectedSub.contains(subArrays[indexPath.row].id)
                 {
-                    cell.nameLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+                    cell.nameLabel.font = UIFont.OpenSansSemibold(size: 15)
                 } else {
-                    cell.nameLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+                    cell.nameLabel.font = UIFont.OpenSansRegular(size: 15)
                 }
             return cell
         }
@@ -143,13 +151,13 @@ extension HomeViewController: UICollectionViewDataSource {
         } else {
             let cell = listCollectionView.dequeueReusableCell(withReuseIdentifier: "AuctionCollectionViewCell", for: indexPath) as! AuctionCollectionViewCell
             cell.titleLabel.text = postArrays[indexPath.row].title
-            cell.titleLabel.font = UIFont(name: "OpenSans", size: 12)
+            cell.titleLabel.font = UIFont.OpenSansRegular(size: 12)
             if postArrays[indexPath.row].is_auction == true {
                 cell.buyLabel.text = "Auction"
-                cell.buyLabel.font = UIFont(name: "OpenSans", size: 13)
+                cell.buyLabel.font = UIFont.OpenSansRegular(size: 13)
             } else if postArrays[indexPath.row].is_buynow == true {
                 cell.buyLabel.text = "Buy Now"
-                cell.buyLabel.font = UIFont(name: "OpenSans", size: 13)
+                cell.buyLabel.font = UIFont.OpenSansRegular(size: 13)
             } else {
                 cell.buyLabel.text = ""
             }
@@ -158,9 +166,9 @@ extension HomeViewController: UICollectionViewDataSource {
                 cell.imageView.sd_setImage(with: URL(string: self.postArrays[indexPath.row].image.image.url), completed: nil)
             }
             cell.priceLabel.text = "$" + String(postArrays[indexPath.row].price) + " Liter"
-            cell.buyLabel.font = UIFont(name: "OpenSans-Semibold", size: 13)
+            cell.buyLabel.font = UIFont.OpenSansSemibold(size: 13)
             cell.quantityLabel.text = String(postArrays[indexPath.row].quantity) + " Liters"
-            cell.quantityLabel.font = UIFont(name: "OpenSans-Semibold", size: 13)
+            cell.quantityLabel.font = UIFont.OpenSansSemibold(size: 13)
             return cell
         }
     }
@@ -181,7 +189,6 @@ extension HomeViewController: UICollectionViewDelegate {
                 self.topSubView.constant = 0
             } else {
                 self.topSubView.constant = -45
-                
             }
             UIView.animate(withDuration: 0.5
             , animations: {
@@ -221,8 +228,10 @@ extension HomeViewController: UICollectionViewDelegate {
         }
         else if collectionView == self.listCollectionView {
             let listingView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "listingNC") as! UINavigationController
-            //let vc = listingView.topViewController as! ListingViewController
+            let vc = listingView.topViewController as! ListingViewController
             //let navController = UINavigationController(rootViewController: listingView)
+            vc.posts = postArrays
+            vc.post = postArrays[indexPath.row]
             self.present(listingView, animated:true, completion: nil)
         }
     

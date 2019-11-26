@@ -10,4 +10,7 @@ import Foundation
 struct Images : Codable, Equatable {
     var id: Int
     var image: Image
+    static func == (lhs: Images, rhs: Images) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

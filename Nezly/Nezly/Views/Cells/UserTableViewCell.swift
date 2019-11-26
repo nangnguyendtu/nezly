@@ -15,7 +15,7 @@ class UserTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        nameLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        nameLabel.font = UIFont.OpenSansSemibold(size: 17)
         
     }
 

@@ -30,7 +30,6 @@
 		CBE22ABB23861E1600E1B595 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE22ABA23861E1600E1B595 /* Posts.swift */; };
 		CBE22ABF2386325300E1B595 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE22ABE2386325300E1B595 /* Images.swift */; };
 		CBE22AC1238633B900E1B595 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE22AC0238633B900E1B595 /* Image.swift */; };
-		CBE22AC323863FC600E1B595 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE22AC223863FC600E1B595 /* Location.swift */; };
 		CBE8C027234C2EE800A9D5CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE8C026234C2EE800A9D5CB /* AppDelegate.swift */; };
 		CBE8C029234C2EE800A9D5CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE8C028234C2EE800A9D5CB /* ViewController.swift */; };
 		CBE8C02C234C2EE800A9D5CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE8C02A234C2EE800A9D5CB /* Main.storyboard */; };
@@ -45,6 +44,7 @@
 		CBF0823C234C913500DCB0B8 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0823A234C913500DCB0B8 /* ListCollectionViewCell.swift */; };
 		CBF0823D234C913500DCB0B8 /* ListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF0823B234C913500DCB0B8 /* ListCollectionViewCell.xib */; };
 		CBF6C67D238544FA00B9EC55 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF6C67C238544FA00B9EC55 /* Post.swift */; };
+		CBF960C6238782080032C0AA /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF960C5238782080032C0AA /* UIFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,7 +73,6 @@
 		CBE22ABA23861E1600E1B595 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		CBE22ABE2386325300E1B595 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		CBE22AC0238633B900E1B595 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		CBE22AC223863FC600E1B595 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CBE8C023234C2EE800A9D5CB /* Nezly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nezly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE8C026234C2EE800A9D5CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBE8C028234C2EE800A9D5CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +89,7 @@
 		CBF0823A234C913500DCB0B8 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
 		CBF0823B234C913500DCB0B8 /* ListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCollectionViewCell.xib; sourceTree = "<group>"; };
 		CBF6C67C238544FA00B9EC55 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		CBF960C5238782080032C0AA /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +118,7 @@
 				CB0038F5234EE3FA00A8CF72 /* UICollectionView.swift */,
 				CBDEEBA12366CF270037B8A3 /* UITableView.swift */,
 				CBDEEBA32366DD410037B8A3 /* UIColor.swift */,
+				CBF960C5238782080032C0AA /* UIFont.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -183,7 +184,6 @@
 				CBE22ABA23861E1600E1B595 /* Posts.swift */,
 				CBE22ABE2386325300E1B595 /* Images.swift */,
 				CBE22AC0238633B900E1B595 /* Image.swift */,
-				CBE22AC223863FC600E1B595 /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -369,6 +369,7 @@
 			files = (
 				CBE8C045234C3E1F00A9D5CB /* CollectionViewCell.swift in Sources */,
 				CBF0823C234C913500DCB0B8 /* ListCollectionViewCell.swift in Sources */,
+				CBF960C6238782080032C0AA /* UIFont.swift in Sources */,
 				CBDEEBA22366CF270037B8A3 /* UITableView.swift in Sources */,
 				CBDEEB9F2366CEEB0037B8A3 /* UserTableViewCell.swift in Sources */,
 				CB9F384E2363E66B00A85E2D /* ListingViewController.swift in Sources */,
@@ -379,7 +380,6 @@
 				CBE8C029234C2EE800A9D5CB /* ViewController.swift in Sources */,
 				CBE22ABF2386325300E1B595 /* Images.swift in Sources */,
 				CBE8C02F234C2EE800A9D5CB /* Nezly.xcdatamodeld in Sources */,
-				CBE22AC323863FC600E1B595 /* Location.swift in Sources */,
 				CBE8C027234C2EE800A9D5CB /* AppDelegate.swift in Sources */,
 				CB3272122355698E00617A2E /* Category.swift in Sources */,
 				CBE8C049234C66E700A9D5CB /* AuctionCollectionViewCell.swift in Sources */,
