@@ -155,6 +155,7 @@ extension HomeViewController: UICollectionViewDataSource {
             cell.titleLabel.font = UIFont.OpenSansRegular(size: 12)
             if postArrays[indexPath.row].is_auction == true {
                 cell.buyLabel.text = "Auction"
+                cell.buyLabel.backgroundColor = UIColor(hex: 0x472E7D)
                 cell.buyLabel.font = UIFont.OpenSansRegular(size: 13)
             } else if postArrays[indexPath.row].is_buynow == true {
                 cell.buyLabel.text = "Buy Now"

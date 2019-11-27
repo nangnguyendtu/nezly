@@ -1085,11 +1085,8 @@
                                                 </constraints>
                                             </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="prM-ch-BN2">
-                                                <rect key="frame" x="14" y="1034" width="386" height="290"/>
+                                                <rect key="frame" x="14" y="1034" width="386" height="367"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="290" id="SRM-1s-HkK"/>
-                                                </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1gF-fk-qIs">
                                                     <size key="itemSize" width="50" height="50"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -1136,6 +1133,7 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Y4Z-Dh-FuO" secondAttribute="trailing" id="2tc-ND-Htb"/>
                                             <constraint firstItem="bUE-lm-U1j" firstAttribute="top" secondItem="bvT-RM-ftn" secondAttribute="top" constant="31" id="4ai-ce-OGa"/>
+                                            <constraint firstAttribute="bottom" secondItem="prM-ch-BN2" secondAttribute="bottom" constant="100" id="5zI-qO-YK1"/>
                                             <constraint firstAttribute="trailing" secondItem="prM-ch-BN2" secondAttribute="trailing" constant="14" id="80V-TY-St0"/>
                                             <constraint firstItem="gf1-bp-fah" firstAttribute="top" secondItem="1HL-VE-sMj" secondAttribute="bottom" id="AKW-4G-PO8"/>
                                             <constraint firstItem="prM-ch-BN2" firstAttribute="top" secondItem="Y4Z-Dh-FuO" secondAttribute="bottom" id="Dy8-hD-ua9"/>
@@ -1237,7 +1235,6 @@
                         <outlet property="descriptionLabel" destination="i5S-e4-vXN" id="A2F-XW-9kp"/>
                         <outlet property="descriptionView" destination="gf1-bp-fah" id="aDI-iy-qKa"/>
                         <outlet property="followButton" destination="9hv-Td-1Me" id="Q32-Ea-ACj"/>
-                        <outlet property="heightContent" destination="SRM-1s-HkK" id="vpl-Eb-SgK"/>
                         <outlet property="heightcontentView" destination="ORp-Ks-sxi" id="uyc-t2-zQX"/>
                         <outlet property="labresultsButton" destination="sAM-8p-5Yu" id="5g6-rx-iX6"/>
                         <outlet property="listCollectionView" destination="XLW-8V-1nh" id="BqN-cv-PJ9"/>

@@ -112,10 +112,11 @@ class ListingViewController: UIViewController {
     }
     
     private func setColor() {
-        buyLabel.backgroundColor = UIColor(rgb: 0x8863D5)
-        containerView.backgroundColor = UIColor(rgb: 0x8863D5)
+        buyLabel.backgroundColor = UIColor(hex: 0x8863D5)
+        containerView.backgroundColor = UIColor(hex: 0x8863D5)
     }
     
+    //hide and show keyboard
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.heightsearchView.constant == 48 {

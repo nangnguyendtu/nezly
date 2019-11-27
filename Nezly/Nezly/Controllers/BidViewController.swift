@@ -22,7 +22,6 @@ class BidViewController: UIViewController {
     @IBOutlet weak var proofoflifeButton: UIButton!
     @IBOutlet weak var followButton: UIButton!
     @IBOutlet weak var containerView2: UIView!
-    @IBOutlet weak var heightContent: NSLayoutConstraint!
     @IBOutlet weak var heightcontentView: NSLayoutConstraint!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
@@ -66,23 +65,29 @@ class BidViewController: UIViewController {
         //addBackgroundGradient()
         
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.isNavigationBarHidden = true
-        self.tabBarController?.tabBar.isHidden = true
-        
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         if let index = posts.firstIndex(where: { $0.id == post.id }) {
             DispatchQueue.main.async {
                 self.listCollectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: false)
-//                self.heightContent.constant = self.listCollectionView2.contentSize.height
-//                self.heightcontentView.constant = 310 + 159 + 300 + 135 + 160 + listCollectionView2.contentSize.height
-
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print(self.listCollectionView2.collectionViewLayout.collectionViewContentSize.height)
+        self.heightcontentView.constant = self.listCollectionView2.frame.origin.y + self.listCollectionView2.collectionViewLayout.collectionViewContentSize.height
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+        
     }
     
     // MARK: -IBAction
@@ -91,7 +96,7 @@ class BidViewController: UIViewController {
     }
     
     @IBAction func selectedChat(_ sender: Any) {
-        chatButton.backgroundColor = UIColor(rgb: 0x8863D5)
+        chatButton.backgroundColor = UIColor(hex: 0x8863D5)
         chatButton.layer.borderWidth = 0
     }
     
@@ -99,7 +104,7 @@ class BidViewController: UIViewController {
         let popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopupViewController") as! PopupViewController
         self.present(popup, animated: true)
         
-        bidButton.backgroundColor = UIColor(rgb: 0x8863D5)
+        bidButton.backgroundColor = UIColor(hex: 0x8863D5)
         bidButton.layer.borderWidth = 0
     }
     // MARK: -GradientColectionview
@@ -118,14 +123,14 @@ class BidViewController: UIViewController {
     }
     
     func setColor() {
-        containerView.backgroundColor = UIColor(rgb: 0x472E7D)
-        bidButton.backgroundColor = UIColor(rgb: 0x472E7D)
-        chatButton.backgroundColor = UIColor(rgb: 0x472E7D)
-        rectangleView.backgroundColor = UIColor(rgb: 0x472E7D)
-        labresultsButton.backgroundColor = UIColor(rgb: 0x8863D5)
-        proofoflifeButton.backgroundColor = UIColor(rgb: 0x8863D5)
-        followButton.backgroundColor = UIColor(rgb: 0x8863D5)
-        containerView2.backgroundColor = UIColor(rgb: 0x8863D5)
+        containerView.backgroundColor = UIColor(hex: 0x472E7D)
+        bidButton.backgroundColor = UIColor(hex: 0x472E7D)
+        chatButton.backgroundColor = UIColor(hex: 0x472E7D)
+        rectangleView.backgroundColor = UIColor(hex: 0x472E7D)
+        labresultsButton.backgroundColor = UIColor(hex: 0x8863D5)
+        proofoflifeButton.backgroundColor = UIColor(hex: 0x8863D5)
+        followButton.backgroundColor = UIColor(hex: 0x8863D5)
+        containerView2.backgroundColor = UIColor(hex: 0x8863D5)
     }
     
     // MARK: -CustomProgressView
@@ -135,7 +140,7 @@ class BidViewController: UIViewController {
         progressView.clipsToBounds = true
         progressView.layer.sublayers![1].cornerRadius = 10
         progressView.subviews[1].clipsToBounds = true
-        progressView.tintColor = UIColor(rgb: 0x8863D5)
+        progressView.tintColor = UIColor(hex: 0x8863D5)
     }
     
     func renderData() {

@@ -29,8 +29,8 @@ class PopupViewController: UIViewController {
 
         customProgressView()
         
-        containerView.backgroundColor = UIColor(rgb: 0x472E7D)
-        submitButton.backgroundColor = UIColor(rgb: 0x8863D5)
+        containerView.backgroundColor = UIColor(hex: 0x472E7D)
+        submitButton.backgroundColor = UIColor(hex: 0x8863D5)
         
         containerView.layer.cornerRadius = 20
         cancelButton.layer.borderWidth = 1
@@ -56,6 +56,7 @@ class PopupViewController: UIViewController {
         tableView.reloadData()
     }
     
+    //hide and show keyboard
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
@@ -77,7 +78,7 @@ class PopupViewController: UIViewController {
         progressView.clipsToBounds = true
         progressView.layer.sublayers![1].cornerRadius = 10
         progressView.subviews[1].clipsToBounds = true
-        progressView.tintColor = UIColor(rgb: 0x8863D5)
+        progressView.tintColor = UIColor(hex: 0x8863D5)
     }
     
 }
@@ -90,7 +91,7 @@ extension PopupViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
         cell.nameLabel.text = arrays[indexPath.row]
-        cell.nameLabel.textColor = UIColor(rgb: 0xD8D8D8)
+        cell.nameLabel.textColor = UIColor(hex: 0xD8D8D8)
         cell.selectionStyle = .none
         return cell
     }

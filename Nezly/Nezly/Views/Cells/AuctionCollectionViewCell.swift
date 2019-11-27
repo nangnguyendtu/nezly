@@ -28,8 +28,8 @@ class AuctionCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         buttonView.layer.cornerRadius = 10
         
-        buyLabel.backgroundColor = UIColor(rgb: 0x8863D5)
-        containerView.backgroundColor = UIColor(rgb: 0x8863D5)
+        buyLabel.backgroundColor = UIColor(hex: 0x8863D5)
+        containerView.backgroundColor = UIColor(hex: 0x8863D5)
     
         containerView.layer.shadowColor = UIColor.gray.cgColor
         containerView.layer.shadowOpacity = 0.2
