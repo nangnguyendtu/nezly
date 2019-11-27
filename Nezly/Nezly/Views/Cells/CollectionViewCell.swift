@@ -15,7 +15,8 @@ class CollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-    nameLabel.font = UIFont.OpenSansRegular(size: 15)
+        nameLabel.font = UIFont.OpenSansRegular(size: 15)
+        
     }
 
 }

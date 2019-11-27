@@ -29,6 +29,7 @@ class BidViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var descriptionView: UIView!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
 
     
     var postArrays = [Post]()
@@ -41,17 +42,16 @@ class BidViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        heightConstraint.priority = UILayoutPriority(rawValue: 999)
+        
         getCellFromNib()
-        setNavigationUI()
         setPagecontrol()
         setUI()
+        setNavigationUI()
         customProgressView()
         renderData()
         setColor()
         //addBackgroundGradient()
-//        print(listCollectionView2.contentSize)
-//        print(listCollectionView2.collectionViewLayout.collectionViewContentSize)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,7 +67,7 @@ class BidViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.heightcontentView.constant = self.listCollectionView2.frame.origin.y + self.listCollectionView2.collectionViewLayout.collectionViewContentSize.height
+        self.heightcontentView.constant = self.listCollectionView2.frame.origin.y + self.listCollectionView2.collectionViewLayout.collectionViewContentSize.height + 100.0
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -95,6 +95,11 @@ class BidViewController: UIViewController {
         bidButton.backgroundColor = UIColor(hex: 0x8863D5)
         bidButton.layer.borderWidth = 0
     }
+    
+    @IBAction func more(_ sender: Any) {
+        
+    }
+    
     // MARK: -GradientColectionview
 //    private func addBackgroundGradient() {
 //        let gradientLayer = CAGradientLayer()
