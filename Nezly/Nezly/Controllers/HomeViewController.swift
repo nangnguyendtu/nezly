@@ -37,17 +37,11 @@ class HomeViewController: UIViewController {
     // MARK: -View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        parentCollectionView.getCellFromNib(identifier: "CollectionViewCell")
-        subCollectionView.getCellFromNib(identifier: "CollectionViewCell")
-        listCollectionView.getCellFromNib(identifier: "AuctionCollectionViewCell")
-        selectedCollectionView.getCellFromNib(identifier: "ListCollectionViewCell")
-        
-        containerView.layer.cornerRadius = 5
-        searchTextField.attributedPlaceholder = NSAttributedString(string: searchTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
-        
+    
+        getCellFromNib()
+        setUI()
+        setupTextfield()
         imageView()
-        
         //Loadjson
         loadJson(filename: "categories")
         loadJsonlistings(filename: "listings")
@@ -59,6 +53,21 @@ class HomeViewController: UIViewController {
 //                print("== \(names)")
 //            }
 //        }
+    }
+    
+    private func getCellFromNib() {
+        parentCollectionView.getCellFromNib(identifier: "CollectionViewCell")
+        subCollectionView.getCellFromNib(identifier: "CollectionViewCell")
+        listCollectionView.getCellFromNib(identifier: "AuctionCollectionViewCell")
+        selectedCollectionView.getCellFromNib(identifier: "ListCollectionViewCell")
+    }
+    
+    private func setupTextfield() {
+        searchTextField.attributedPlaceholder = NSAttributedString(string: searchTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
+    }
+    
+    private func setUI() {
+        containerView.layer.cornerRadius = 5
     }
     
     func imageView(){

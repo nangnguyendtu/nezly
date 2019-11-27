@@ -41,28 +41,16 @@ class BidViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chatButton.layer.borderWidth = 1
-        chatButton.layer.borderColor = UIColor.white.cgColor
-        bidButton.layer.borderWidth = 1
-        bidButton.layer.borderColor = UIColor.white.cgColor
-        followButton.layer.cornerRadius = 3
-        containerView2.layer.cornerRadius = 13
-        labresultsButton.layer.cornerRadius = 3
-        proofoflifeButton.layer.cornerRadius = 3
-        
-        listCollectionView.getCellFromNib(identifier: "ListingCollectionViewCell")
-        listCollectionView2.getCellFromNib(identifier: "AuctionCollectionViewCell")
-        
-        self.navigationController?.isNavigationBarHidden = true
-        self.tabBarController?.tabBar.isHidden = true
-        
-        self.pageControl.numberOfPages = 3
-        self.pageControl.currentPage = 0
-        
+        getCellFromNib()
+        setNavigationUI()
+        setPagecontrol()
+        setUI()
         customProgressView()
         renderData()
         setColor()
         //addBackgroundGradient()
+//        print(listCollectionView2.contentSize)
+//        print(listCollectionView2.collectionViewLayout.collectionViewContentSize)
         
     }
     
@@ -78,7 +66,7 @@ class BidViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print(self.listCollectionView2.collectionViewLayout.collectionViewContentSize.height)
+        
         self.heightcontentView.constant = self.listCollectionView2.frame.origin.y + self.listCollectionView2.collectionViewLayout.collectionViewContentSize.height
     }
     
@@ -115,6 +103,16 @@ class BidViewController: UIViewController {
 //        listCollectionView.layer.insertSublayer(gradientLayer, at: 0)
 //    }
     
+    private func getCellFromNib() {
+        listCollectionView.getCellFromNib(identifier: "ListingCollectionViewCell")
+        listCollectionView2.getCellFromNib(identifier: "AuctionCollectionViewCell")
+    }
+    
+    private func setNavigationUI() {
+        self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let witdh = scrollView.frame.width - (scrollView.contentInset.left*2)
         let index = scrollView.contentOffset.x / witdh
@@ -122,7 +120,23 @@ class BidViewController: UIViewController {
         self.pageControl?.currentPage = Int(roundedIndex)
     }
     
-    func setColor() {
+    private func setPagecontrol() {
+        self.pageControl.numberOfPages = 3
+        self.pageControl.currentPage = 0
+    }
+    
+    private func setUI() {
+        chatButton.layer.borderWidth = 1
+        chatButton.layer.borderColor = UIColor.white.cgColor
+        bidButton.layer.borderWidth = 1
+        bidButton.layer.borderColor = UIColor.white.cgColor
+        followButton.layer.cornerRadius = 3
+        containerView2.layer.cornerRadius = 13
+        labresultsButton.layer.cornerRadius = 3
+        proofoflifeButton.layer.cornerRadius = 3
+    }
+    
+    private func setColor() {
         containerView.backgroundColor = UIColor(hex: 0x472E7D)
         bidButton.backgroundColor = UIColor(hex: 0x472E7D)
         chatButton.backgroundColor = UIColor(hex: 0x472E7D)
@@ -133,8 +147,8 @@ class BidViewController: UIViewController {
         containerView2.backgroundColor = UIColor(hex: 0x8863D5)
     }
     
-    // MARK: -CustomProgressView
-    func customProgressView() {
+    //CustomProgressView
+    private func customProgressView() {
         progressView.transform = progressView.transform.scaledBy(x: 1, y: 8)
         progressView.layer.cornerRadius = 10
         progressView.clipsToBounds = true
@@ -143,14 +157,14 @@ class BidViewController: UIViewController {
         progressView.tintColor = UIColor(hex: 0x8863D5)
     }
     
-    func renderData() {
+    private func renderData() {
         titleLabel.text = post.title
         priceLabel.text = "$" + String(post.price) + " Liter"
         quantityLabel.text = String(post.quantity) + " Liters"
         descriptionLabel.text = post.description
     }
     
-    func setFontdata() {
+    private func setFontdata() {
         titleLabel.font = UIFont.OpenSansExtrabold(size: 19)
         priceLabel.font = UIFont.OpenSansSemibold(size: 19)
         quantityLabel.font = UIFont.OpenSansSemibold(size: 19)

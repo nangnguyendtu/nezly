@@ -28,15 +28,11 @@ class PopupViewController: UIViewController {
         super.viewDidLoad()
 
         customProgressView()
+        setColor()
+        setUI()
+        getCellFromNib()
         
-        containerView.backgroundColor = UIColor(hex: 0x472E7D)
-        submitButton.backgroundColor = UIColor(hex: 0x8863D5)
-        
-        containerView.layer.cornerRadius = 20
-        cancelButton.layer.borderWidth = 1
-        cancelButton.layer.borderColor = UIColor.white.cgColor
-        
-        tableView.getCellFromNib(identifier: "UserTableViewCell")
+
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
         self.hideKeyboardWhenTappedAround()
@@ -56,6 +52,21 @@ class PopupViewController: UIViewController {
         tableView.reloadData()
     }
     
+    private func getCellFromNib() {
+          tableView.getCellFromNib(identifier: "UserTableViewCell")
+    }
+    
+    private func setUI() {
+        containerView.layer.cornerRadius = 20
+        cancelButton.layer.borderWidth = 1
+        cancelButton.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    private func setColor() {
+        containerView.backgroundColor = UIColor(hex: 0x472E7D)
+        submitButton.backgroundColor = UIColor(hex: 0x8863D5)
+    }
+    
     //hide and show keyboard
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
@@ -71,7 +82,7 @@ class PopupViewController: UIViewController {
         }
     }
     
-    // MARK: -CustomProgressView
+    //CustomProgressView
     func  customProgressView() {
         progressView.transform = progressView.transform.scaledBy(x: 1, y: 8)
         progressView.layer.cornerRadius = 10

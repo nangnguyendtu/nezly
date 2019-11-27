@@ -32,22 +32,13 @@ class ListingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        infoButton.layer.cornerRadius = 17
-        infoButton.layer.borderWidth = 1
-        infoButton.layer.borderColor = UIColor.white.cgColor
-        buyLabel.layer.cornerRadius = 15
-        containerView.layer.cornerRadius = 15
-        searchView.layer.cornerRadius = 6
-        
-        listingCollectionView.getCellFromNib(identifier: "ListingCollectionViewCell")
-        
-        self.navigationController?.isNavigationBarHidden = true
-        self.tabBarController?.tabBar.isHidden = true
-        
         self.hideKeyboardWhenTappedAround()
         setColor()
         renderData()
         setFontdata()
+        setUI()
+        setNavigationUI()
+        getCellFromNib()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -89,6 +80,24 @@ class ListingViewController: UIViewController {
     func scrollToItem(at indexPath: IndexPath,
                       at scrollPosition: UICollectionView.ScrollPosition,
                       animated: Bool){
+    }
+    
+    private func getCellFromNib() {
+        listingCollectionView.getCellFromNib(identifier: "ListingCollectionViewCell")
+    }
+    
+    private func setNavigationUI() {
+        self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    private func setUI() {
+        infoButton.layer.cornerRadius = 17
+        infoButton.layer.borderWidth = 1
+        infoButton.layer.borderColor = UIColor.white.cgColor
+        buyLabel.layer.cornerRadius = 15
+        containerView.layer.cornerRadius = 15
+        searchView.layer.cornerRadius = 6
     }
     
     private func renderData() {
