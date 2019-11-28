@@ -129,10 +129,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oM5-UD-sBx">
-                                <rect key="frame" x="118" y="110" width="49" height="58"/>
+                                <rect key="frame" x="119" y="110" width="48" height="58"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7X-V8-q4A">
-                                        <rect key="frame" x="9" y="45" width="36" height="19"/>
+                                        <rect key="frame" x="8.5" y="45" width="36" height="19"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dut-Sa-T0M">
                                                 <rect key="frame" x="0.0" y="-1" width="36" height="22"/>
@@ -160,7 +160,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDI-K6-jrg">
-                                        <rect key="frame" x="0.0" y="0.0" width="54" height="53"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="53" height="53"/>
                                         <state key="normal" image="Rectangle"/>
                                     </button>
                                 </subviews>
@@ -171,6 +171,7 @@
                                     <constraint firstAttribute="trailing" secondItem="NDI-K6-jrg" secondAttribute="trailing" constant="-5" id="bEE-Mr-vm6"/>
                                     <constraint firstItem="NDI-K6-jrg" firstAttribute="top" secondItem="oM5-UD-sBx" secondAttribute="top" id="dBq-xy-DKQ"/>
                                     <constraint firstAttribute="height" constant="58" id="jOV-WQ-HZO"/>
+                                    <constraint firstAttribute="width" constant="48" id="mfD-Mo-uds"/>
                                     <constraint firstItem="NDI-K6-jrg" firstAttribute="centerX" secondItem="g7X-V8-q4A" secondAttribute="centerX" id="rxa-ou-Tt9"/>
                                 </constraints>
                             </view>
@@ -183,7 +184,6 @@
                             <constraint firstItem="fcW-5H-zfs" firstAttribute="leading" secondItem="YBS-6T-Evp" secondAttribute="leading" id="ArT-yK-atD"/>
                             <constraint firstItem="oM5-UD-sBx" firstAttribute="top" secondItem="K8F-Eb-9eA" secondAttribute="bottom" constant="90" id="DJu-7J-DUb"/>
                             <constraint firstAttribute="trailing" secondItem="K8F-Eb-9eA" secondAttribute="trailing" id="FtI-Di-D8y"/>
-                            <constraint firstItem="oM5-UD-sBx" firstAttribute="leading" secondItem="YBS-6T-Evp" secondAttribute="leading" constant="118" id="Ibi-nr-1hK"/>
                             <constraint firstAttribute="trailing" secondItem="oM5-UD-sBx" secondAttribute="trailing" constant="4" id="KfY-m0-QaQ"/>
                             <constraint firstItem="r0Y-qi-pdM" firstAttribute="leading" secondItem="YBS-6T-Evp" secondAttribute="leading" id="PpH-Hd-tKt"/>
                             <constraint firstAttribute="trailing" secondItem="r0Y-qi-pdM" secondAttribute="trailing" id="RyB-IH-Vwi"/>

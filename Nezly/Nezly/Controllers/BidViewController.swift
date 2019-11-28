@@ -29,8 +29,6 @@ class BidViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var descriptionView: UIView!
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
-
     
     var postArrays = [Post]()
     var posts = [Post]()
@@ -41,8 +39,6 @@ class BidViewController: UIViewController {
     // MARK: -View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        heightConstraint.priority = UILayoutPriority(rawValue: 999)
         
         getCellFromNib()
         setPagecontrol()
